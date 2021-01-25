@@ -1,0 +1,72 @@
+:root {
+    --primary: #0B254B;
+    --light: #FFFFFF;
+    --light-blue: #F5F6FA;
+    --gris: #EFF2F7;
+}
+
+.bg-light {
+    background-color: var(--light) !important;
+}
+
+.bg-light-blue { 
+    background-color: var(--light-blue);
+}
+
+.bg-primary {
+    background-color: rgba(0, 123, 255, .1) !important;
+    border: 0;
+}
+
+#sidebar-container {
+    min-height: 100vh;
+    margin-left: -18rem;
+    transition: margin .25s ease-in-out;
+}
+
+#sidebar-container .logo {
+    padding: .875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-container .menu {
+    width: 18rem;
+}
+
+#content-wrapper.toggled #sidebar-container {
+    margin-left: 0;
+}
+
+@media (min-width: 768px) {
+    
+    #sidebar-container {
+        margin-left: 0;
+    }
+    
+    #page-container {
+        min-width: 0;
+        width: 100%
+    }
+
+    #content-wapper.toggled #sidebar-container {
+        margin-left: -18rem;
+    }
+
+}
+
+.fuenteNexosMedical {
+    font-family: 'Yusei Magic', sans-serif;
+}
+
+#spinner {
+		-webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}

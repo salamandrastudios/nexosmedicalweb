@@ -1,0 +1,63 @@
+<div class="container mt-5">
+    <h1><small>Doctor</small> </h1>
+    <hr>
+    <div class="row text-left">
+        <div class="col">
+            <button routerLink="/doctor" class="btn btn-danger">
+                <i class="fa fa-arrow-left"></i>
+                Regresar
+            </button>
+        </div>
+    </div>
+    <hr>
+    <form autocomplete="off" [formGroup]="formDoctorNexos" (ngSubmit)="guardar()">
+
+        <div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Nombre Completo</label>
+                    <input type="text" class="form-control" placeholder="Escriba un nombre completo" formControlName="nombre" [class.is-invalid]="nombreNoValido">
+                    <small *ngIf="nombreNoValido" class="text-danger">Ingrese el nombre completo</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Especialidad</label>
+                    <input type="text" class="form-control" placeholder="Escriba una especialidad" formControlName="especialidad" [class.is-invalid]="especialidadNoValida">
+                    <small *ngIf="especialidadNoValida" class="text-danger">Ingrese una especialidad</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Numero Credencial</label>
+                    <input type="text" class="form-control" placeholder="Escriba el numero de credencial" formControlName="credencial" [class.is-invalid]="credencialNoValida">
+                    <small *ngIf="credencialNoValida" class="text-danger">Ingrese un numero de credencial</small>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Hospital</label>
+                    <input type="text" class="form-control" placeholder="Escriba el hospital donde trabaja" formControlName="hospital" [class.is-invalid]="hospitalNoValido">
+                    <small *ngIf="hospitalNoValido" class="text-danger">Ingrese el nombre de un hospital</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-12 text-right ">
+                    <button type="submit" class="btn btn-primary ">Agregar</button>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+    <!--
+    <hr>
+        <pre>
+        Estado del formulario: {{ formDoctorNexos.valid }}
+        <br>
+        Status: {{ formDoctorNexos.status }}
+        <br>
+        {{ formDoctorNexos.value | json }}
+    </pre>
+    -->
+</div>

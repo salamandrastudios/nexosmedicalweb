@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <h1><small>asignacion doctores</small> </h1>
+    <hr>
+    <div class="row text-left">
+        <div class="col">
+            <button routerLink="/paciente" class="btn btn-danger">
+                <i class="fa fa-arrow-left"></i>
+                Regresar
+            </button>
+        </div>
+    </div>
+    <hr>
+    <form autocomplete="off" [formGroup]="formAsignar" (ngSubmit)="guardar()">
+
+        <div>
+            <div class="row">
+
+                <div class="form-group col-md-12">
+                    <label>Seleccione un doctor</label>
+                    <select formControlName="asignarDoctor" class="form-control">
+                        <option *ngFor="let doctor of doctores" [value]="doctor.Id">{{ doctor.NombreCompleto }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-12 text-right ">
+                    <button type="submit" class="btn btn-primary ">Asignar</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <hr>
+    <pre>
+        Estado del formulario: {{ formAsignar.valid }}
+        <br>
+        Status: {{ formAsignar.status }}
+        <br>
+        {{ formAsignar.value | json }}
+    </pre>
+
+</div>

@@ -1,0 +1,63 @@
+<div class="container mt-5">
+    <h1><small>Paciente</small> </h1>
+    <hr>
+    <div class="row text-left">
+        <div class="col">
+            <button routerLink="/doctor" class="btn btn-danger">
+                <i class="fa fa-arrow-left"></i>
+                Regresar
+            </button>
+        </div>
+    </div>
+    <hr>
+    <form autocomplete="off" [formGroup]="formPacienteNexos" (ngSubmit)="guardar()">
+
+        <div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Nombre completo</label>
+                    <input type="text" class="form-control" placeholder="Escriba un nombre completo" formControlName="nombre" [class.is-invalid]="nombreNoValido">
+                    <small *ngIf="nombreNoValido" class="text-danger">Ingrese el nombre completo</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Numero seguro social</label>
+                    <input type="text" class="form-control" placeholder="Escriba un numero de seguro social" formControlName="segurosocial" [class.is-invalid]="seguroSocialNoValido">
+                    <small *ngIf="seguroSocialNoValido" class="text-danger">Ingrese un numero de seguro social</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Codigo Postal</label>
+                    <input type="text" class="form-control" placeholder="Escriba el numero de codigo postal" formControlName="codigopostal" [class.is-invalid]="codigoPostalNoValido">
+                    <small *ngIf="codigoPostalNoValido" class="text-danger">Ingrese un numero de codigo postal</small>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Telefono Contacto</label>
+                    <input type="text" class="form-control" placeholder="Escriba el numero de contacto" formControlName="telefono" [class.is-invalid]="telefonoNoValido">
+                    <small *ngIf="telefonoNoValido" class="text-danger">Ingrese el numero de contacto</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-12 text-right ">
+                    <button type="submit" class="btn btn-primary ">Agregar</button>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+    <!--
+    <hr>
+    <pre>
+        Estado del formulario: {{ formPacienteNexos.valid }}
+        <br>
+        Status: {{ formPacienteNexos.status }}
+        <br>
+        {{ formPacienteNexos.value | json }}
+    </pre>
+    -->
+</div>

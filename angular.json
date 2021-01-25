@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "NexosMedicalWeb"
+    }
+  },
+  "defaultProject": "NexosMedicalWeb",
+  "cli": {
+    "analytics": false
+  }
 }
